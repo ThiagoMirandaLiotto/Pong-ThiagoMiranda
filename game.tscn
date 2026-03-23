@@ -1,0 +1,125 @@
+[gd_scene format=3 uid="uid://da8nnse7hu2wu"]
+
+[ext_resource type="Script" uid="uid://dklmpgyv5sklx" path="res://j_1.gd" id="1_80nbo"]
+[ext_resource type="Script" uid="uid://bvu6syi57kdxl" path="res://diseño.gd" id="1_fc0e3"]
+[ext_resource type="Script" uid="uid://bfd4gdme5fsoj" path="res://j_2.gd" id="2_e2o6t"]
+[ext_resource type="Script" uid="uid://behjjkbkxe04q" path="res://pelota.gd" id="3_feb5d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mwb40"]
+size = Vector2(641, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_80nbo"]
+size = Vector2(642, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e2o6t"]
+size = Vector2(6, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_feb5d"]
+size = Vector2(20, 379)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7jktm"]
+
+[node name="Game" type="Node2D" unique_id=1967997345]
+
+[node name="Diseño" type="Node" parent="." unique_id=93893825]
+script = ExtResource("1_fc0e3")
+
+[node name="MuroSuperior" type="StaticBody2D" parent="Diseño" unique_id=1022040001]
+position = Vector2(0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Diseño/MuroSuperior" unique_id=298078455]
+position = Vector2(320.5, -9)
+shape = SubResource("RectangleShape2D_mwb40")
+
+[node name="ColorRect" type="ColorRect" parent="Diseño/MuroSuperior" unique_id=1994934522]
+offset_top = -19.0
+offset_right = 644.0
+offset_bottom = 1.0
+
+[node name="MuroInferior" type="StaticBody2D" parent="Diseño" unique_id=867267124]
+position = Vector2(319, 368)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Diseño/MuroInferior" unique_id=903542907]
+shape = SubResource("RectangleShape2D_80nbo")
+
+[node name="ColorRect2" type="ColorRect" parent="Diseño/MuroInferior" unique_id=1193042523]
+offset_left = -321.0
+offset_top = -10.0
+offset_right = 324.0
+offset_bottom = 10.0
+
+[node name="LineaCentral" type="ColorRect" parent="Diseño" unique_id=614754422]
+offset_left = 320.0
+offset_top = -18.0
+offset_right = 322.0
+offset_bottom = 375.0
+color = Color(1, 1, 1, 0.6313726)
+
+[node name="LabelScore1" type="Label" parent="Diseño" unique_id=660320131]
+offset_left = 135.0
+offset_top = 1.0
+offset_right = 175.0
+offset_bottom = 24.0
+text = "0"
+horizontal_alignment = 1
+
+[node name="LabelScore2" type="Label" parent="Diseño" unique_id=193182773]
+offset_left = 481.0
+offset_top = 2.0
+offset_right = 521.0
+offset_bottom = 25.0
+text = "0"
+horizontal_alignment = 1
+
+[node name="J1" type="CharacterBody2D" parent="Diseño" unique_id=397741971 groups=["Player"]]
+position = Vector2(35, 141)
+script = ExtResource("1_80nbo")
+
+[node name="ColorRect" type="ColorRect" parent="Diseño/J1" unique_id=98274535]
+offset_left = -8.0
+offset_right = -2.0
+offset_bottom = 64.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Diseño/J1" unique_id=257761003]
+position = Vector2(-5, 32)
+shape = SubResource("RectangleShape2D_e2o6t")
+
+[node name="J2" type="CharacterBody2D" parent="Diseño" unique_id=478871239 groups=["Player"]]
+position = Vector2(619, 141)
+script = ExtResource("2_e2o6t")
+
+[node name="ColorRect" type="ColorRect" parent="Diseño/J2" unique_id=1574184345]
+offset_left = -8.0
+offset_right = -2.0
+offset_bottom = 64.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Diseño/J2" unique_id=1130622470]
+position = Vector2(-5, 32)
+shape = SubResource("RectangleShape2D_e2o6t")
+
+[node name="Area2DPlayer1" type="StaticBody2D" parent="Diseño" unique_id=297973960]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Diseño/Area2DPlayer1" unique_id=725229964]
+position = Vector2(0, 179.5)
+shape = SubResource("RectangleShape2D_feb5d")
+
+[node name="Area2DPlayer2" type="StaticBody2D" parent="Diseño" unique_id=1432687606]
+position = Vector2(640, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Diseño/Area2DPlayer2" unique_id=234095140]
+position = Vector2(0, 179.5)
+shape = SubResource("RectangleShape2D_feb5d")
+
+[node name="Pelota" type="CharacterBody2D" parent="Diseño" unique_id=1289658040]
+position = Vector2(320, 176)
+script = ExtResource("3_feb5d")
+initial_speed = null
+speed_increment = null
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Diseño/Pelota" unique_id=916037385]
+shape = SubResource("CircleShape2D_7jktm")
+
+[node name="Sprite2D" type="Sprite2D" parent="Diseño/Pelota" unique_id=977645702]
+visible = false
+position = Vector2(-8, -8)
+scale = Vector2(15, 15)
