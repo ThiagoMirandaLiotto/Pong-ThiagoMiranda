@@ -1,22 +1,18 @@
 extends Node2D
 
-# Variables de puntuación
 var score1: int = 0
 var score2: int = 0
 
-# Referencias a los marcadores
 @onready var label_score1 = $LabelScore1
 @onready var label_score2 = $LabelScore2
-# Referencia a la pelota
+
 @onready var pelota = $Pelota
 
 func _ready() -> void:
-	# Inicializa los marcadores con "0"
 	label_score1.text = "0"
 	label_score2.text = "0"
 	
-	# ¡MUY IMPORTANTE!: Conecta las señales de las Area2D para los goles
-	# Puedes hacer esto desde el panel de Nodos, pero es más limpio aquí.
+	# Conecta las señales de las Area2D para los goles
 	$Area2DPlayer1.connect("body_entered", _on_Area2DPlayer1_body_entered)
 	$Area2DPlayer2.connect("body_entered", _on_Area2DPlayer2_body_entered)
 

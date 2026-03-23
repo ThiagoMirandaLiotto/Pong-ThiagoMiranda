@@ -21,7 +21,7 @@ size = Vector2(20, 379)
 
 [node name="Game" type="Node2D" unique_id=1967997345]
 
-[node name="Diseño" type="Node" parent="." unique_id=93893825]
+[node name="Diseño" type="Node2D" parent="." unique_id=95006864]
 script = ExtResource("1_fc0e3")
 
 [node name="MuroSuperior" type="StaticBody2D" parent="Diseño" unique_id=1022040001]
@@ -97,13 +97,13 @@ offset_bottom = 64.0
 position = Vector2(-5, 32)
 shape = SubResource("RectangleShape2D_e2o6t")
 
-[node name="Area2DPlayer1" type="StaticBody2D" parent="Diseño" unique_id=297973960]
+[node name="Area2DPlayer1" type="Area2D" parent="Diseño" unique_id=994262744]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Diseño/Area2DPlayer1" unique_id=725229964]
 position = Vector2(0, 179.5)
 shape = SubResource("RectangleShape2D_feb5d")
 
-[node name="Area2DPlayer2" type="StaticBody2D" parent="Diseño" unique_id=1432687606]
+[node name="Area2DPlayer2" type="Area2D" parent="Diseño" unique_id=2141065873]
 position = Vector2(640, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Diseño/Area2DPlayer2" unique_id=234095140]
@@ -113,8 +113,6 @@ shape = SubResource("RectangleShape2D_feb5d")
 [node name="Pelota" type="CharacterBody2D" parent="Diseño" unique_id=1289658040]
 position = Vector2(320, 176)
 script = ExtResource("3_feb5d")
-initial_speed = null
-speed_increment = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Diseño/Pelota" unique_id=916037385]
 shape = SubResource("CircleShape2D_7jktm")
